@@ -8,9 +8,10 @@ $('#loginModal').modal();
            });
            $('#registerTrigger').click(function(){
 $('#registerModal').modal();
-           });     
-
-
+           }); 
+           $('#addarticlebtn').click(function(){
+             $('#articleModalForm').modal();
+                        });
   $("#articlesearch").on("keyup", function() {
      var value = $(this).val().toLowerCase();
     $("#pet-articles .article-col").filter(function() {
@@ -68,13 +69,14 @@ function filterpets()
     });
 }
 function showArticle(articles)
-{
-  $('#articleModal').modal();
-  var article = $(articles).find('.petarticle');
-  var body =article.find('.blockquote').html();
-  var head =article.find('.petarticle-header').text();
+{$('#articleModal').modal();
+var article = $(articles).find('.petarticle');
+var body =article.find('.article-full').text();
+var head =article.find('.petarticle-header').text();
+var footer =article.find('.blockquote .blockquote-footer').html();
 $('#article-head').text(head);
-$('#article-content').html(body);
+$('#articlemodal-body').text(body);
+$('#articlemodal-footer').html(footer);
 }
 
  function disableadoptionfee(checkfree) {
@@ -95,7 +97,15 @@ function replaceClass(id, oldClass, newClass) {
   }
   $(elem).addClass(newClass);
 }
-var article = $('#pet-articles').find('.petarticle-body').find('p');
+function hidetoshow(elem) {
+    $(elem).removeClass("d-none");
+    $(elem).addClass("d-block");
+  }
+function showtohide(elem) {
+    $(elem).removeClass("d-block");
+    $(elem).addClass("d-none");
+  }
+var article = $('#pet-articles').find('.petarticle-body').find('#article-excerpt');
  function excerpt(excerptElement, number , more = "..."){
     excerptElement.each(function(){
     var articlebody = $(this).text(),
@@ -117,7 +127,7 @@ var article = $('#pet-articles').find('.petarticle-body').find('p');
 $(function() {
     $(document).on("change",".uploadFile", function()
     {
-    		var uploadFile = $(this);
+        var uploadFile = $(this);
         var files = !!this.files ? this.files : [];
         if (!files.length || !window.FileReader) return;
  
@@ -150,4 +160,13 @@ function readURL(input) {
 $("#pet-img").change(function() {
   readURL(this);
 });
+$(".toggle-password").click(function() {
 
+    $(this).toggleClass("fa-eye fa-eye-slash");
+    var input = $($(this).attr("toggle"));
+    if (input.attr("type") == "password") {
+      input.attr("type", "text");
+    } else {
+      input.attr("type", "password");
+    }
+  });

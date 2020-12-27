@@ -37,16 +37,23 @@
             </button>
                  <div class="collapse navbar-collapse" id="Navbar">
                <ul class="navbar-nav mr-auto">  
-                     <li class="nav-item active "><a  class="nav-link nav-link-fade-up" href="#"><span class="fa fa-home fa-lg"></span> Home</a></li>
-                    <li class="nav-item active"><a class="nav-link" href="./aboutus.html"><span class="fa fa-info fa-lg"></span> About Us</a></li>
+                     <li class="nav-item active "><a  class="nav-link nav-link-fade-up" href="./index.html"><span class="fa fa-home fa-lg"></span> Home</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="./about.html"><span class="fa fa-info fa-lg"></span> About Us</a></li>
                     <li class="nav-item active"><a class="nav-link" href="./petadoption.html"><span class="fa fa-paw fa-lg"></span> Pet Adoption</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="./petdonate.html"><span><img height="25" src="img/paw-plus.png"></span> Giveaway Pet </a></li>
                     <li class="nav-item active"><a class="nav-link" href="./petarticle.html"><span class="fa fa-newspaper-o fa-lg"></span> Pet Articles </a></li>
-                    <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-question-circle fa-lg"></span> Faqs </a></li>
+                    
                     <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul> 
                 <ul class="navbar-nav navbar-right">  
                      <li class="nav-item active"><a class="nav-link" id="loginTrigger" href="#"><span class="fa fa fa-sign-in "></span> Login / <span class="fa fa fa-user "></span> Register</a></li>
-                    
+                    <!-- <li class="nav-item dropdown">
+     <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">  More items  </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#"> Submenu item 1</a></li>
+        <li><a class="dropdown-item" href="#"> Submenu item 2 </a></li>
+      </ul>
+  </li> -->
                  </ul>
                 </div>
                           
@@ -54,7 +61,7 @@
     </nav>
 
 
- <div class="modal petform fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<div class="modal petform fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -79,15 +86,15 @@
   <div role="tabpanel" class="tab-pane fade show active" id="loginForm">
                            
       <div class="modal-body mt-3 mb-3 shadow mx-3">
-       
+          <form action="login.html" method="POST">
         <div class="form-group row mb-5">
           <div class="col-2 col-sm-1"><i class="fa fa-lg fa-envelope prefix grey-text "></i></div>
-          <div class="col-10 col-sm-11"> <input placeholder="Enter Email Address" type="email" id="orangeForm-name" class="form-control validate"></div>
+          <div class="col-10 col-sm-11"> <input required  placeholder="Enter Email Address" type="email" id="user-email" name="user-email" class="form-control validate"></div>
           
         </div>
         <div class="form-group row mb-5">
           <div class="col-2 col-sm-1"><i class="fa fa-lg fa-lock prefix grey-text "></i></div>
-          <div class=" col-10 col-sm-11"> <input placeholder="Enter Password" type="password" id="orangeForm-name" class="form-control validate"></div>
+          <div class=" col-10 col-sm-11"> <input required  placeholder="Enter Password" type="password" id="user-pass" name="user-pass" class="form-control validate"><span toggle="#user-pass" class="fa fa-fw fa-eye field-icon toggle-password"></span></div>
           
         </div>
         
@@ -95,29 +102,48 @@
         <button class="btn btn-submit shadow petgradient">Login <span class="fas fa-sign-in-alt "></span></button>
         
         </div>
+              </form>
       </div>
   </div>
   <div role="tabpanel" class="tab-pane fade " id="registerForm">
 <div class="modal-body mt-3 mb-3 shadow mx-3">
+    <form action="register.html" method="POST">
         <div class="form-group row mb-5">
           <div class="col-2 col-sm-1"><i class="fa fa-lg fa-user prefix grey-text "></i></div>
-          <div class="col-10 col-sm-11"> <input placeholder="Enter Your Name" type="text" id="orangeForm-name" class="form-control validate"></div>
+          <div class="col-10 col-sm-11"> <input required placeholder="Enter Your Name" type="text" id="user-name" name="user-name" class="form-control validate"></div>
           
         </div>
         <div class="form-group row mb-5">
           <div class="col-2 col-sm-1"><i class="fa fa-lg fa-envelope prefix grey-text "></i></div>
-          <div class="col-10 col-sm-11"> <input placeholder="Enter Email Address" type="email" id="orangeForm-name" class="form-control validate"></div>
+          <div class="col-10 col-sm-11"> <input required placeholder="Enter Email Address" type="email" id="user-email" name="user-email" class="form-control validate"></div>
+          
+        </div>
+        <div class="form-group row mb-5">
+          <div class="col-2 col-sm-1"><i class="fa fa-lg fa-phone prefix grey-text "></i></div>
+          <div class="col-10 col-sm-11"> <input required placeholder="Enter Phone Number" type="text" id="user-contact" name="user-contact" class="form-control validate"></div>
           
         </div>
         <div class="form-group row mb-5">
           <div class="col-2 col-sm-1"><i class="fa fa-lg fa-lock prefix grey-text "></i></div>
-          <div class=" col-10 col-sm-11"> <input placeholder="Enter Password" type="password" id="orangeForm-name" class="form-control validate"></div>
+          <div class=" col-10 col-sm-11"> <input required placeholder="Enter Password" type="password" id="ruser-pass" name="user-pass" class="form-control validate"><span toggle="#ruser-pass" class="fa fa-fw fa-eye field-icon toggle-password"></span></div>
           
         </div>
-        
+             <div class="form-group row mb-5">
+          <div class="col-2 col-sm-1"><i class="fa fa-lg fa-city prefix grey-text "></i></div>
+          <div class="col-10 col-sm-11"> <input required placeholder="Enter City" type="text" id="city" name="city" class="form-control validate"></div>
+   </div>
+        <div class="form-group row mb-5">
+          <div class="col-2 col-sm-1"><i class="fa fa-lg fa-building prefix grey-text "></i></div>
+          <div class="col-10 col-sm-11"> <input required placeholder="Enter State" type="text" id="state" name="state" class="form-control validate"></div>
+       </div>
+        <div class="form-group row mb-5">
+          <div class="col-2 col-sm-1"><i class="fa fa-lg fa-map-marker-alt prefix grey-text "></i></div>
+          <div class="col-10 col-sm-11"> <input required placeholder="Enter Address" type="text" id="address" name="address" class="form-control validate"></div>
+   </div>
         <div class="md-form mb-4 text-center">
         <button class="btn btn-submit shadow petgradient">Register <span class="fa fa-user-plus "></span></button>
         </div>
+    </form>
       </div>
   </div>
     </div>
@@ -125,7 +151,7 @@
 </div>
 </div>
      
-<header class="container-fluid petheader">
+<header class="container-fluid petheader" id="main-container">
   <div class="row">
    <div class="col-12 col-md-6 d-none d-md-block text-center ">
       <h1 class="pettagline">Just Pet It <i class="fa fa-paw"></i></h1>
@@ -135,28 +161,34 @@
     </div>
   </div>
   <div class="row row-header p-5">
-    <div class="col-12 col-sm-6 align-self-center">
-                    <h2>She's <b>feline</b> fine!</h2>
-                    <p>Are you sure that your cat is healthy and happy with you!?<br>
-                        To be Assure about your cat to clear all your doubts and questions related, Please attend the live session by Ms. Kitty D'Souza.<br>
-                        <b>Pawsibly</b> you'll love the session.</p>
+    <div class="col-12 col-sm-5 text-center text-md-left">
+                    <h2>We care for animals!</h2>
+                    <h6 >In these very trying times, It's so comforting to know that We are here to back us and help us feed the homeless abandoned and neglectd animals.
+                      <br><br>
+                    If you are a pet lover or care for animals Then please report any abandoned or neglected animal whenever you see. </h6>
+                     <a href="./reportpet.html" style="background-color: white; color:#8490ff; " id="reserveTrigger" class="btn btn-lg my-3  shadow" > Report Here <span class="fa fa-arrow-circle-right"></span></a>
                 </div>
-                <div class="col-12 col-sm-3 align-self-center text-center">
-                    <img src="css/img/pet4.png" class="img-fluid">
-                    
+                <div class="col-12  col-sm-2 align-self-center text-center">
+                    <img height="250" src="img/abanpet1.png" >
                 </div>
-                <div class="col-12 col-sm-3 align-self-center">
-                            <button style="background-color: white; color:#8490ff; " id="reserveTrigger" class="btn btn-block nav-link shadow-sm"
-                        > Register Here <span class="fa fa-arrow-circle-right"></span></button><div class="col-12 col-sm-6 align-self-center">
-
+                    <div class="col-12 col-sm-5 text-center text-md-right">
+                    <h2>And We Know You Do Too!</h2>
+                    <h6 >You can also help them by adopting an abandoned/neglectd pet. </h6>
+                     <a href="./adoptabanpet.html" style="background-color: white; color:#8490ff; " id="reserveTrigger" class="btn btn-lg my-3  shadow" > Adopt An Abandoned pet <span class="fa fa-arrow-circle-right"></span></a>
                 </div>
-            </div>
   </div>
 </header>
 
  <div class="container" id="main-container">
     <div style="background-color: white;" class="row row-content shadow ">
     	<div class="col">
+        <div class="row ">
+        <div class="col-12 m-0 p-0 petgradient"><img class="wave"  src="img/wave3.png"></div>
+     <div class="col-12 text-center"><h1  class="main-heading my-3">Welcome To PetWhoody</h1>
+            <h6 class=""><p><em>&#8220 Happy home for a pet is a happy home for you &#8221</em></p></h6>
+            
+            </div>
+            </div>
             <div class="row justify-content-center">
             <div  class="col-12 col-md-6 text-center">
             <img  src="img/5.jpg" class=" img-fluid adopt-donate d-inline-block"><br>
@@ -182,92 +214,132 @@
         </div>
         <hr>
         <div class="row row-content shadow">
-          <div class="col-12 text-center"><h1  class="main-heading my-3">Pets Available For Adoption</h1>
+          <div class="col-12 text-center"><h1  class="main-heading my-3">Avaiable Pets</h1>
             <hr class="w-50 ">
             </div>
-           <div class="col-lg-3 col-md-6 py-4">
-          <a href="./petdetail.html" class="pet-card ">
-         <i class="fa fa-paw pet-icon"></i>
-         <div class="pattern card shadow text-center">
           
-           <div class="pet-img mx-auto">
-        <img  src="img/leo.jpg" class="rounded-circle z-depth-1 img-fluid shadow mt-4"
-          alt="Sample avatar">
-      </div>
-      <h5 class="petblue-text pacifo font-weight-bold mt-4 ">Leo</h5>
-      <p class="text-dark mx-3">
-        <div class="row">
-        <div class="col text-right border-right"><strong class="text-dark">Labrador</strong></div>
-        <div class="col text-left"><strong class="text-dark">Bhopal</strong></div>
-      </div>
-      </p>
-         </div>
-           <p class="pet-price"><i class="fa fa-rupee"></i> 200</p> 
+           <div class="col-lg-3 pet-col col-md-6 py-4 h-100">
+                <a href="./petdetail.html?pet_id=11" class="pet-card ">
+               <i class="fa fa-paw pet-icon"></i>
+               <div class="pattern card shadow text-center">
+                
+                 <div class="pet-img mx-auto">
+              <img  src="petimages/PW_shemaroo_11.jpg" class="rounded-circle z-depth-1 img-fluid shadow mt-4"
+                alt="shemaroo">
+            </div>
+            <h5 class="petblue-text pacifo font-weight-bold mt-4 text-capitalize">shemaroo</h5>
+            
+            <h6><strong class="text-dark text-capitalize"><i class="fa fa-mercury"></i>  male</strong></h6>
+            
+            <p class="text-dark ">
+              <div class="row">
+              <div class="col text-right border-right"><strong class="text-dark text-capitalize">pomeranian</strong></div>
+              <div class="col text-left"><strong class="text-dark text-capitalize">Bhopal</strong></div>
+            </div>
+            </p>
+               </div>
+               
+                 <p class="pet-price"><i class="fa fa-rupee"></i> 19000.0</p> 
+                   
+                <p class="d-none">dog68 Electronic Market,Itwara Road, Azad Market, Peer Gate AreawhiteMploves Humans
+vaccinations up to date</p>
+             </a>
+              </div>
+               
       
-       </a>
-        </div>
-        <div class="col-lg-3 col-md-6 py-4">
-          <a href="#" class="pet-card ">
-         <i class="fa fa-paw pet-icon"></i>
-         <div class="pattern card shadow text-center">
+           <div class="col-lg-3 pet-col col-md-6 py-4 h-100">
+                <a href="./petdetail.html?pet_id=6" class="pet-card ">
+               <i class="fa fa-paw pet-icon"></i>
+               <div class="pattern card shadow text-center">
+                
+                 <div class="pet-img mx-auto">
+              <img  src="petimages/PW_minnie_6.jpg" class="rounded-circle z-depth-1 img-fluid shadow mt-4"
+                alt="minnie">
+            </div>
+            <h5 class="petblue-text pacifo font-weight-bold mt-4 text-capitalize">minnie</h5>
+            
+            <h6><strong class="text-dark text-capitalize"><i class="fa fa-mercury"></i>  female</strong></h6>
+            
+            <p class="text-dark ">
+              <div class="row">
+              <div class="col text-right border-right"><strong class="text-dark text-capitalize">ragdoll</strong></div>
+              <div class="col text-left"><strong class="text-dark text-capitalize">Indore</strong></div>
+            </div>
+            </p>
+               </div>
+               
+                 <p class="pet-price"><i class="fa fa-rupee"></i> 45000.0</p> 
+                   
+                <p class="d-none">catAnnapurna NagarwhiteMadhya Pradesh  </p>
+             </a>
+              </div>
+               
+      
+           <div class="col-lg-3 pet-col col-md-6 py-4 h-100">
+                <a href="./petdetail.html?pet_id=5" class="pet-card ">
+               <i class="fa fa-paw pet-icon"></i>
+               <div class="pattern card shadow text-center">
+                
+                 <div class="pet-img mx-auto">
+              <img  src="petimages/PW_Cola_5.jpg" class="rounded-circle z-depth-1 img-fluid shadow mt-4"
+                alt="Cola">
+            </div>
+            <h5 class="petblue-text pacifo font-weight-bold mt-4 text-capitalize">Cola</h5>
+            
+            <h6><strong class="text-dark text-capitalize"><i class="fa fa-mercury"></i>  female</strong></h6>
+            
+            <p class="text-dark ">
+              <div class="row">
+              <div class="col text-right border-right"><strong class="text-dark text-capitalize">shitzu</strong></div>
+              <div class="col text-left"><strong class="text-dark text-capitalize">Mumbai</strong></div>
+            </div>
+            </p>
+               </div>
+               
+                 <p class="pet-price"><i class="fa fa-rupee"></i> 29000.0</p> 
+                   
+                <p class="d-none">dogkhar westbrownMaharashtraHealthy with well nourished hair.
+</p>
+             </a>
+              </div>
+               
+      
+           <div class="col-lg-3 pet-col col-md-6 py-4 h-100">
+                <a href="./petdetail.html?pet_id=4" class="pet-card ">
+               <i class="fa fa-paw pet-icon"></i>
+               <div class="pattern card shadow text-center">
+                
+                 <div class="pet-img mx-auto">
+              <img  src="petimages/PW_jojo-juju_4.jpg" class="rounded-circle z-depth-1 img-fluid shadow mt-4"
+                alt="jojo-juju">
+            </div>
+            <h5 class="petblue-text pacifo font-weight-bold mt-4 text-capitalize">jojo-juju</h5>
+            
+            <p class="text-dark ">
+              <div class="row">
+              <div class="col text-right border-right"><strong class="text-dark text-capitalize">love birds</strong></div>
+              <div class="col text-left"><strong class="text-dark text-capitalize">jabalpur</strong></div>
+            </div>
+            </p>
+               </div>
+               
+                 <p class="pet-price"><i class="fa fa-rupee"></i> 2000.0</p> 
+                   
+                <p class="d-none">birdsVidya NagarmixMadhya PradeshThey are real LOVE birds<3
+healthy</p>
+             </a>
+              </div>
+               
+      
+      <div class="col-12 text-center">
+              <a href="./petadoption.html" class=" animated-btn right">
+        <span class="left title shadow"><span class="arrow-left text-capitalize"></span>View All</span>
+        <span class="right fa fa-arrow-circle-right "></span>
+      </a>
+              </div>
+      
           
-           <div class="pet-img mx-auto">
-        <img  src="img/demopet6.jpg" class="rounded-circle z-depth-1 img-fluid shadow mt-4"
-          alt="Sample avatar">
-      </div>
-      <h5 class="petblue-text pacifo font-weight-bold mt-4 ">Snowy</h5>
-      <p class="text-dark mx-3">
-        <div class="row">
-        <div class="col text-right border-right"><strong class="text-dark">Persian</strong></div>
-        <div class="col text-left"><strong class="text-dark">Indore</strong></div>
-      </div>
-      </p>
-         </div>
-         <p class="pet-price"><i class="fa fa-rupee"></i> FREE</p>
-       </a>
-        </div>
-        <div class="col-lg-3 col-md-6 py-4">
-          <a href="#" class="pet-card ">
-         <i class="fa fa-paw pet-icon"></i>
-         <div class="pattern card shadow text-center">
-          
-           <div class="pet-img mx-auto">
-        <img  src="img/demopet5.jpg" class="rounded-circle z-depth-1 img-fluid shadow mt-4"
-          alt="Sample avatar">
-      </div>
-      <h5 class="petblue-text pacifo font-weight-bold mt-4 ">Laila-Majnu</h5>
-      <p class="text-dark mx-3">
-        <div class="row">
-        <div class="col text-right border-right"><strong class="text-dark">Love Birds</strong></div>
-        <div class="col text-left"><strong class="text-dark">Jaipur</strong></div>
-      </div>
-      </p>
-         </div>
-       <p class="pet-price"><i class="fa fa-rupee"></i> 200</p>
-       </a>
-        </div>
-        <div class="col-lg-3 col-md-6 py-4">
-          <a href="#" class="pet-card ">
-         <i class="fa fa-paw pet-icon"></i>
-         <div class="pattern card shadow text-center">
-          
-           <div class="pet-img mx-auto">
-        <img  src="img/demopet7.jpg" class="rounded-circle z-depth-1 img-fluid shadow mt-4"
-          alt="Sample avatar">
-      </div>
-      <h5 class="petblue-text pacifo font-weight-bold mt-4 ">Muffin</h5>
-      <p class="text-dark mx-3">
-        <div class="row">
-        <div class="col text-right border-right"><strong class="text-dark">Pug</strong></div>
-        <div class="col text-left"><strong class="text-dark">Bhopal</strong></div>
-      </div>
-      </p>
-         </div>
-       <p class="pet-price"><i class="fa fa-rupee"></i> 200</p>
-       </a>
-        </div>
-        </div>
- </div><!-- Footer -->
+        </div> </div><!-- Footer -->
 
 <footer style="background-color: #eceff1;" class="footer">
 
@@ -282,7 +354,7 @@
         <div  class="col-md-6 col-lg-7 text-center text-md-right">
 
           
-          <a class="btn btn-social-icon btn-facebook">
+          <a class="btn btn-social-icon btn-facebook text-blue">
             <i  class="fa fa-facebook-f white-text mr-4"> </i>
           </a>
           <a class="btn btn-social-icon btn-twitter">

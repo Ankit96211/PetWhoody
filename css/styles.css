@@ -33,6 +33,24 @@ body
 {
  padding:0px; 
 }
+
+.navbar .nav-item .dropdown-menu{ 
+  display: none;
+padding: 0px;
+}
+  .navbar .nav-item .dropdown-menu .dropdown-item
+  {
+    color: #8490ff !important;
+    transition: 0.3s;
+  }
+  .navbar .nav-item .dropdown-menu .dropdown-item:hover
+  {
+    color: white !important;
+    background-color: #8490ff !important;
+  }
+  .navbar .nav-item:hover .dropdown-menu{ display: block; }
+  .navbar .nav-item .dropdown-menu{ margin-top:0 !important; }
+
 .row-content {
   margin: 40px auto;
   padding: 10px;
@@ -127,6 +145,12 @@ color: #849aff;
 .nav-tabs .nav-item
 {
   width: 50%;
+}
+.v-center
+{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .footer-content a, .footer-copyright a
 {
@@ -238,6 +262,9 @@ border-radius: 0px;
 .modal-body {
  
    }
+.navbar .nav-link{
+   transition:0.3s;
+}
 .navbar .nav-link:hover {
     transform: scale(1.1);
 }
@@ -510,6 +537,7 @@ font-size: 50px !important;
 }
 .petdetail-price {
   display: inline-block;
+ 
   width: auto;
   position: relative;
   top: 50%;
@@ -521,7 +549,7 @@ font-size: 50px !important;
   border-left: 1px solid #6ab070;
   margin-left: 19px;
   color: white;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 16px;
   line-height: 32px;
   padding: 0 5px 0 5px;
@@ -590,8 +618,7 @@ font-size: 50px !important;
 
 
 .petsearchbar{
-    margin-bottom: auto;
-    margin-top: auto;
+    
     height: 50px;
     border-radius: 30px;
     color: white;
@@ -752,4 +779,39 @@ border-radius: 50px!important;
 .ask-info:hover
 {
   text-decoration: none;
+}
+
+.petform input[type='radio']:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #d1d3d1 !important;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+    }
+
+    .petform input[type='radio']:checked:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #8490ff !important;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+    }
+    .field-icon {
+  float: right;
+  margin-left: -25px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 2;
 }

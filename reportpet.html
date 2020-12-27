@@ -9,12 +9,11 @@
 
     <!-- Bootstrap CSS -->
      <!-- build:css css/main.css -->
-   
-      <link rel="stylesheet" href="css/main1.css">
+    <link rel="stylesheet" href="css/main1.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
 <link rel="stylesheet" href="css/styles.css">
-
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <!-- endbuild-->
     <title>PetWhoody</title>
@@ -43,8 +42,8 @@
                     <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <ul class="navbar-nav navbar-right">  
-                     <li class="nav-item active"><a class="nav-link" id="loginTrigger" href="#"><span class="fa fa fa-sign-in "></span> Login / <span class="fa fa fa-user "></span> Register</a></li>
-                    <li class="nav-item active d-none"><a class="nav-link " id="loginTrigger" href="#"><span class="fa fa fa-user "></span> Ankit Sisodiya </a></li>
+                     <li class="nav-item active"><a class="nav-link" id="loginTrigger" href="#"><span class="fa fa-sign-in-alt "></span> Login / <span class="fa fa fa-user "></span> Register</a></li>
+                    
                  </ul>
                 </div>
                           
@@ -140,7 +139,7 @@
   </div>
 </div>
 </div>
-<header class="container-fluid petheader" id="main-container">
+     <header class="container-fluid petheader" id="main-container">
   <div class="row">
    <div class="col-12 col-md-6 d-none d-md-block text-center ">
       <h1 class="pettagline">Just Pet It <i class="fa fa-paw"></i></h1>
@@ -167,77 +166,97 @@
                 </div>
   </div>
 </header>
-<div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <img src="img/leo.jpg" class="img-fluid">
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="petownermodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog  modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-         <h2 class="modal-title el-messiri" id="exampleModalCenterTitle">Ask About Leo</h2>
-       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="mx-4 p-2 shadow">
-        <h2 class="petblue-text pacifo my-4">Ankit Sisodiya</h2>
-        <a href="tel:9407296211"  class="text-dark ask-info" ><div class="row my-2">
-        <div class="col-1"><i class="fa fa-lg fa-phone-alt mx-2"></i></div><div class="col"><h4 class="  el-messiri "> 9407296211</h4></div>
-        </div>
-      </a>
-      <a href="mailto:ankit@gmail.com" class="text-dark ask-info" ><div class="row my-2">
-        <div class="col-1"><i class="fa fa-lg fa-envelope mx-2"></i></div><div class="col"><h4 class="  el-messiri "> ankit@gmail.com</h4></div>
-        </div>
-      </a>
-      <a href="https://goo.gl/maps/nxohpEhJvfG6fV7UA" target="_blank" class="text-dark ask-info" ><div class="row my-2">
-        <div class="col-1"><i class="fa fa-lg fa-address-card mx-2"></i></div><div class="col"><h4 class="  el-messiri "> 68,Electronic Market,Itwara Road,Bhopal</h4></div>
-        </div>
-      </a>
-      </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-    <div class="container" id="main-container">
+    <div class="container " id="main-container">
       <div style="background-color: white;" class=" row  row-content shadow p-0 pb-3">
-      <div class="col-12 m-0 p-0 petgradient"><img class="wave"  src="img/wave3.png"></div>
-     <div class="col-12 col-md-4 text-center">
-<img id="img-prev" class="img-fluid d-inline-block rounded p-1" src="img/leo.jpg" alt="your image" />
+     <div class="col">
+      
+       <div class="row ">
+         <div class="col-12 m-0 p-0 petgradient"><img class="wave"  src="img/wave3.png"></div>
+     <div class="col-12 text-center"><h1  class="main-heading my-3">Report An Abandoned Animal</h1>
+            </div>
+            </div>
+     <div class="row">
+     <div class="col-12 col-md-8  text-center order-last order-md-first">
+      <div class="petform">
+      <form id="abanpet-form" action="addreport.html" method="POST" enctype="multipart/form-data">
+      
+        <div class="form-group  row mb-4 mb-md-5">
+          <div class="col-1"><i class="fa fa-lg fa-user prefix grey-text "></i></div>
+          <div class="col-4"> <input required placeholder="Enter Your Name" type="text" id="reporter-name" name="reporter-name" class="form-control validate"></div>
+          <div class="col-1"><i class="fa fa-lg fa-phone prefix grey-text "></i></div>
+          <div class="col-5"> <input required placeholder="Contact Number" type="text" id="reporter-contact" name="reporter-contact" class="form-control validate"></div>
+        </div>
+      
+          <input type="hidden" value="<%=user_name %>" id="reporter-name" name="reporter-name">
+        <input type="hidden" value="<%=user_contact %>" id="reporter-contact" name="reporter-contact">
+      
+        <div class="form-group  row mb-4  mb-md-5 ">
+          <div class="col-1"><i class="fa fa-lg fa-dog prefix grey-text "></i></div>
+          <div class=" col-4"> <input required placeholder="Pet Type (eg. Dog)" type="text" id="abanpet-type" name="abanpet-type" class="form-control validate"></div>
+          <div class=" col-1"><i class="fa fa-lg fa-cat prefix grey-text "></i></div>
+          <div class=" col-5"> <input required placeholder="Pet Breed" type="text" id="abanpet-breed" name="abanpet-breed" class="form-control validate"></div>
+        </div>
+        <div class="form-group  row mb-4 mb-md-5">
+          <div class="col-1"><i class="fa fa-lg fa-palette prefix grey-text "></i></div>
+          <div class="col-4"><input required placeholder="Pet Color" type="text" id="abanpet-color" name="abanpet-color" class="form-control validate"></div>
+          <div class="col-1"><i class="fa fa-lg fa-mercury prefix grey-text "></i></div>
+          <div class="col-5 text-left"> 
+          <label class="radio-inline mx-2">
+      <input type="radio" value="male" name="abanpet-gender"> Male
+    </label>
+    <label class="radio-inline mx-2">
+      <input type="radio" value="female" name="abanpet-gender"> Female
+    </label></div>
+        </div>
+           <div class="form-group  row mb-4 mb-md-5">
+          <div class="col-1"><i class="fa fa-lg fa-city prefix grey-text "></i></div>
+          <div class="col-4 "> <input required placeholder="City" type="text" id="abanpet-city" name="abanpet-city" class="form-control validate"></div>
+          <div class="col-1"><i class="fa fa-lg fa-building prefix grey-text "></i></div>
+          <div class="col-5"> <input required placeholder="State" type="text" id="abanpet-state" name="abanpet-state" class="form-control validate"></div>
+        </div>
+
+        <div class="form-group row mb-5">
+          <div class="col-1"><i class="fa fa-lg fa-map-marker-alt prefix grey-text "></i></div>
+          <div class=" col-11"> <input required placeholder="Enter Address" type="text" id="abanpet-address" name="abanpet-address" class="form-control validate"></div>
+        </div>
+         <div class="form-group row mb-5">
+          <div class="col-1"><i class="fa fa-lg fa-question-circle prefix grey-text "></i></div>
+          <div class=" col">
+       <label for="pet-desc" class="float-left">Additional Details</label>
+            <textarea class=" form-control" rows="3" id="abanpet-desc" name="abanpet-desc">       
+          </textarea>
+
+          </div>
+        </div>
+        <div class=" mb-4 text-center">
+        <button onClick="0" class="btn btn-submit shadow petgradient">Submit <span class="fa fa-arrow-circle-right "></span></button>
+        
+        </div>
+      </div>
+        </div>
+         <div class="col-12  col-md-4 order-first order-md-last text-center">
+          <div class="row"><div class="col-12 text-center imgUp">
+    <!-- <div class="imagePreview"></div> -->
+<img id="img-prev" class="img-fluid d-inline-block rounded p-5" src="img/camera.png" alt="your image" />
     <br>
-<a type="button"  data-toggle="modal" data-target="#imageModal" class="animated-btn left mr-4">
+        <label class="animated-btn btn left m-0">
         <span class="left fa fa-camera shadow"></span>
-        <span class="right title "><span class="arrow-right "></span>View Photo</span>
-      </a>
+        <span class="right title ">
+          <span class="arrow-right "></span>Upload</span>
+        <!-- <input required type="file" class="uploadFile img" name="pet-image" id="pet-image" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"> -->
+        <input required type="file" class="uploadFile img" id="pet-img" name="abanpet-img" style="width: 0px;height: 0px;overflow: hidden;">
+      </label>
+  </div>
+  </form>
+  <!-- col-2 -->
+  <div class="col-12">
+            <img src="img/6.jpg" class="img-fluid adopt-donate">
+          </div>
+      </div>
     </div>
-    <div class="col-12 col-md-8 text-md-left text-center">
-      <h1  class="pacifo my-2 petblue-text ">Leo <small >, 2 years old</small> <p class="petdetail-price"><i class="fa fa-rupee"></i> 200</p></h1>
-      <hr >
-      <h2  class="text-dark el-messiri">  Labrador | Dog </h2>
-      <h3  class="text-dark my-3 el-messiri"><i class="fa fa-birthday-cake"></i> 22 August 2017 </h3>
-      <h3  class="text-dark my-3 el-messiri"><i class="fa fa-address-card"></i> 101,Ivory Phase 2, New Market </h3>
-      <h3  class="text-dark my-3 el-messiri"><i class="fa fa-map-marker-alt"></i> Bhopal,Madhya Pradesh </h3>
-      <pre class="text-dark my-3 h5 el-messiri"><i class="fa fa-question-circle"></i> Vaccinations up to date.
-      Bhairaat</pre>
-       <a type="button"  data-toggle="modal" data-target="#petownermodal" class=" animated-btn right">
-        <span class="left title shadow"><span class="arrow-left"></span>Ask About Leo</span>
-        <span class="right fa fa-question-circle "></span>
-      </a>
     </div>
   </div>
-     <div class="row row-content shadow">
+    <div class="row row-content shadow">
           <div class="col-12 text-center"><h1  class="main-heading my-3">Avaiable Pets</h1>
             <hr class="w-50 ">
             </div>
@@ -365,7 +384,6 @@ healthy</p>
           
         </div>
     </div>
- 
 <footer style="background-color: #eceff1;" class="footer">
 
   <div class="petgradient ">
@@ -377,22 +395,20 @@ healthy</p>
         </div>
   
         <div  class="col-md-6 col-lg-7 text-center text-md-right">
-
-          
           <a class="btn btn-social-icon btn-facebook">
-            <i class="fa fa-facebook-f white-text mr-4"> </i>
+            <i class="fab fa-facebook-f mr-4"> </i>
           </a>
           <a class="btn btn-social-icon btn-twitter">
-            <i class="fa fa-twitter white-text mr-4"> </i>
+            <i class="fab fa-twitter mr-4"> </i>
           </a>
           <a class="btn btn-social-icon btn-google">
-            <i class="fa fa-google-plus white-text mr-4"> </i>
+            <i class="fab fa-google white-text mr-4"> </i>
           </a>
           <a class="btn btn-social-icon btn-linkedin">
-            <i class="fa fa-linkedin white-text mr-4"> </i>
+            <i class="fab fa-linkedin white-text mr-4"> </i>
           </a>
           <a class="btn btn-social-icon btn-instagram">
-            <i class="fa fa-instagram white-text"> </i>
+            <i class="fab fa-instagram white-text"> </i>
           </a>
 
         </div>
@@ -475,7 +491,6 @@ healthy</p>
   </div>
 </footer>
 
-
 </body>
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -486,7 +501,7 @@ healthy</p>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="js/scripts.js"></script>
 </html>
